@@ -26,4 +26,9 @@ class MainActivity : AppCompatActivity() {
             MyApplication.drawTheme = 2
         }
     }
+
+    override fun onRestart() {
+        super.onRestart()
+        Runtime.getRuntime().gc()
+    }
 }
