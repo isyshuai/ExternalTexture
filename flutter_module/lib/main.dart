@@ -33,10 +33,10 @@ var img="bbb";
 var gifImg="fff";
 var drawType=DrawType.center;
 var currentIndex=1;
+var imgUrl="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1606373040028&di=8ba95c56fab1093b37ea98580d9c2d83&imgtype=0&src=http%3A%2F%2Fa4.att.hudong.com%2F27%2F67%2F01300000921826141299672233506.jpg";
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
         appBar: AppBar(
           title: Text(widget.title),
@@ -60,19 +60,20 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(child: ExTextureWidget(img: img,width: 50, height: 50,drawType: drawType,),color: Colors.blueGrey,),
             Container(child: ExTextureWidget(img: img,width: 50, height: 50,drawType: drawType,),color: Colors.blueGrey,),
             Container(child: ExTextureWidget(img: img,width: 50, height: 50,drawType: drawType,),color: Colors.blueGrey,),
-            Container(child: ExTextureWidget(img: img,width: 150, height: 150,drawType: drawType,),color: Colors.blueGrey,),
-            Container(child: ExTextureWidget(img: img,width: 150, height: 50,drawType: drawType,),color: Colors.blueGrey,),
-            Container(child: ExTextureWidget(img: img,width: 50, height: 50,drawType: drawType,),color: Colors.blueGrey,),
-            Container(child: ExTextureWidget(img: img,width: 50, height: 50,drawType: drawType,),color: Colors.blueGrey,),
-            Container(child: ExTextureWidget(img: img,width: 50, height: 150,drawType: drawType,),color: Colors.blueGrey,),
-            Container(child: ExTextureWidget(img: img,width: 50, height: 50,drawType: drawType,),color: Colors.blueGrey,),
-            Container(child: ExTextureWidget(img: img,width: 50, height: 50,drawType: drawType,),color: Colors.blueGrey,),
-            Container(child: ExTextureWidget(img: img,width: 50, height: 50,drawType: drawType,),color: Colors.blueGrey,),
-            Container(child: ExTextureWidget(img: img,width: 50, height: 50,drawType: drawType,),color: Colors.blueGrey,),
-            Container(child: ExTextureWidget(img: img,width: 50, height: 50,drawType: drawType,),color: Colors.blueGrey,),
+            Container(child: ExTextureWidget(img: window.defaultRouteName=="openGl 绘制纹理"?img:imgUrl,width: 150, height: 150,drawType: drawType,),color: Colors.blueGrey,),
+            Container(child: ExTextureWidget(img: window.defaultRouteName=="openGl 绘制纹理"?img:imgUrl,width: 150, height: 50,drawType: drawType,),color: Colors.blueGrey,),
+            Container(child: ExTextureWidget(img: window.defaultRouteName=="openGl 绘制纹理"?img:imgUrl,width: 50, height: 50,drawType: drawType,),color: Colors.blueGrey,),
+            Container(child: ExTextureWidget(img: window.defaultRouteName=="openGl 绘制纹理"?img:imgUrl,width: 50, height: 50,drawType: drawType,),color: Colors.blueGrey,),
+            Container(child: ExTextureWidget(img: window.defaultRouteName=="openGl 绘制纹理"?img:imgUrl,width: 50, height: 150,drawType: drawType,),color: Colors.blueGrey,),
+            Container(child: ExTextureWidget(img: window.defaultRouteName=="openGl 绘制纹理"?img:imgUrl,width: 50, height: 50,drawType: drawType,),color: Colors.blueGrey,),
+            Container(child: ExTextureWidget(img: window.defaultRouteName=="openGl 绘制纹理"?img:imgUrl,width: 50, height: 50,drawType: drawType,),color: Colors.blueGrey,),
+            Container(child: ExTextureWidget(img: window.defaultRouteName=="openGl 绘制纹理"?img:imgUrl,width: 50, height: 50,drawType: drawType,),color: Colors.blueGrey,),
+            Container(child: ExTextureWidget(img: window.defaultRouteName=="openGl 绘制纹理"?img:imgUrl,width: 50, height: 50,drawType: drawType,),color: Colors.blueGrey,),
+            Container(child: ExTextureWidget(img: window.defaultRouteName=="openGl 绘制纹理"?img:imgUrl,width: 50, height: 50,drawType: drawType,),color: Colors.blueGrey,),
             Offstage(offstage:window.defaultRouteName=="openGl 绘制纹理"?true:false,child: Container(child: ExTextureWidget(img: gifImg,width: 200, height: 100,drawType: drawType,asGif: true,)),),
             Offstage(offstage:window.defaultRouteName=="openGl 绘制纹理"?true:false,child:Container(child: ExTextureWidget(img: gifImg,width: 100, height: 100,drawType: drawType,asGif: true,))),
             Container(margin:EdgeInsets.only(top: 30),child: Text("显示带有边缘锯齿的无需理会,是因为Flow绘制子Widget边缘计算的差异"),color: Colors.deepOrange,),
+            Offstage(offstage:window.defaultRouteName=="openGl 绘制纹理"?false:true,child:Container(margin:EdgeInsets.only(top: 20),child: Text("OpenGl 暂不支持网络图片 如果有需要把获取Bitmap的方式修改一下即可"),color: Colors.deepOrange,)),
           ],),),
     bottomNavigationBar:BottomNavigationBar(
         items: bottomNavItems,
@@ -100,7 +101,14 @@ class _MyHomePageState extends State<MyHomePage> {
     setState(() {
       currentIndex=index;
        gifImg=gifImg=="fff"?"eee":"fff" ;
-      index == 1 ? img = img == "bbb" ? "aaa" : "bbb": drawType =drawType == DrawType.center ? DrawType.fitXy : DrawType.center;
+      if(index == 1) {
+        img = img == "bbb" ? "aaa" : "bbb";
+        imgUrl=imgUrl=="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1606373040028&di=8ba95c56fab1093b37ea98580d9c2d83&imgtype=0&src=http%3A%2F%2Fa4.att.hudong.com%2F27%2F67%2F01300000921826141299672233506.jpg"?
+        "https://ss0.bdstatic.com/70cFvHSh_Q1YnxGkpoWK1HF6hhy/it/u=1945499115,3652225039&fm=15&gp=0.jpg"
+        :"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1606373040028&di=8ba95c56fab1093b37ea98580d9c2d83&imgtype=0&src=http%3A%2F%2Fa4.att.hudong.com%2F27%2F67%2F01300000921826141299672233506.jpg";
+      }else {
+        drawType = drawType == DrawType.center ? DrawType.fitXy : DrawType.center;
+      }
     });
   }
 }
