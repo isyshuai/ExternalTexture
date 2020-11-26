@@ -1,7 +1,9 @@
 # External_Texture
 
 **基于canvas 与 openGl 构建Android与Flutter共享纹理 支持网络图片，本地图片，GIF图片  :smile:**
-```OpenGl 目前不支持GIF和居中 canvas相对成熟些``` :wink:
+<br/>
+```OpenGl 目前不支持GIF和居中 canvas相对成熟些``` :wink:<br/>
+```OpenGl 暂不支持网络图片 如果有需要把获取Bitmap的方式修改一下即可```:sunny:
 
 # 开发环境
 ```Flutter SDK : <1.22.3>```
@@ -17,5 +19,5 @@
 # 效果
 
 # 下载Apk体验 
-**二维码在 drawable 文件夹下 <br/> Apk在 release 文件夹下**<br/> :blush:
+**二维码在 drawable 文件夹下 <br/> Apk在 release 文件夹下** :blush:<br/>
 ![二维码](https://github.com/183839128/External_Texture/blob/master/android_extexture/app/src/main/res/drawable/ewm.png)
