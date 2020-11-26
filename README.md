@@ -19,5 +19,5 @@
 # 效果
 
 # 下载Apk体验 
-**二维码在 drawable 文件夹下 <br/> Apk在 release 文件夹下** :blush:<br/>
-![二维码](https://github.com/183839128/External_Texture/blob/master/android_extexture/app/src/main/res/drawable/ewm.png)
+> 点击文字链接可跳转:blush:<br/>
+**[二维码](https://github.com/183839128/External_Texture/blob/master/android_extexture/app/src/main/res/drawable/ewm.png) 在 drawable 文件夹下 <br/> [APK](https://github.com/183839128/External_Texture/blob/master/android_extexture/app/release/app-release.apk) 在 release 文件夹下** <br/>
