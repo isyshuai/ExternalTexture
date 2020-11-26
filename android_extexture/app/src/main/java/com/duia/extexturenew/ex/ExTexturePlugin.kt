@@ -60,59 +60,29 @@ class ExTexturePlugin(
                         //canvas方式
                         img?.let {
                             if (asGif) {
-                                if (it.startsWith(mHttp)) {
-                                    result.success(
-                                        loadGif(
-                                            context,
-                                            surfaceTextureEntry,
-                                            it,
-                                            width,
-                                            height
-                                        )
-                                    )
-                                } else {
-                                    val resId = mResources.getIdentifier(it, mDrawable, packageName)
-                                    result.success(
-                                        loadGif(
-                                            context,
-                                            surfaceTextureEntry,
-                                            resId,
-                                            width,
-                                            height
-                                        )
-                                    )
-                                }
-                            } else {
-                                if (it.startsWith(mHttp)) {
-                                    var id = loadImg(
+                                result.success(
+                                    loadGif(
                                         context,
                                         surfaceTextureEntry,
                                         it,
                                         width,
-                                        height,
-                                        mDrawType
+                                        height
                                     )
-                                    Log.e(
-                                        "ExTexturePlugin",
-                                        "(onMethodCall:${Thread.currentThread().stackTrace[2].lineNumber}) surface createId=" + id
-                                    )
-                                    result.success(id)
-                                } else {
-                                    val resId = mResources.getIdentifier(it, mDrawable, packageName)
-                                    var id = loadImg(
-                                        context,
-                                        surfaceTextureEntry,
-                                        resId,
-                                        width,
-                                        height,
-                                        mDrawType
-                                    )
-                                    Log.e(
-                                        "ExTexturePlugin",
-                                        "(onMethodCall:${Thread.currentThread().stackTrace[2].lineNumber}) surface createId=" + id
-                                    )
-                                    result.success(id)
-                                }
+                                )
+                            } else {
+                                var id = loadImg(
+                                    context,
+                                    surfaceTextureEntry,
+                                    it,
+                                    width,
+                                    height,
+                                    mDrawType
+                                )
+                                result.success(id)
+                                Log.e(
+                                    "ExTexturePlugin",
+                                    "(onMethodCall:${Thread.currentThread().stackTrace[2].lineNumber}) surface createId=" + id
+                                )
                             }
                         }
                     }

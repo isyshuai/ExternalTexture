@@ -30,10 +30,10 @@ class MyHomePage extends StatefulWidget {
   _MyHomePageState createState() => _MyHomePageState();
 }
 var img="bbb";
+var gifImg="fff";
 var drawType=DrawType.center;
 var currentIndex=1;
 class _MyHomePageState extends State<MyHomePage> {
-  bool _visible = false;
   @override
   Widget build(BuildContext context) {
 
@@ -68,6 +68,11 @@ class _MyHomePageState extends State<MyHomePage> {
             Container(child: ExTextureWidget(img: img,width: 50, height: 50,drawType: drawType,),color: Colors.blueGrey,),
             Container(child: ExTextureWidget(img: img,width: 50, height: 50,drawType: drawType,),color: Colors.blueGrey,),
             Container(child: ExTextureWidget(img: img,width: 50, height: 50,drawType: drawType,),color: Colors.blueGrey,),
+            Container(child: ExTextureWidget(img: img,width: 50, height: 50,drawType: drawType,),color: Colors.blueGrey,),
+            Container(child: ExTextureWidget(img: img,width: 50, height: 50,drawType: drawType,),color: Colors.blueGrey,),
+            Offstage(offstage:window.defaultRouteName=="openGl 绘制纹理"?true:false,child: Container(child: ExTextureWidget(img: gifImg,width: 200, height: 100,drawType: drawType,asGif: true,)),),
+            Offstage(offstage:window.defaultRouteName=="openGl 绘制纹理"?true:false,child:Container(child: ExTextureWidget(img: gifImg,width: 100, height: 100,drawType: drawType,asGif: true,))),
+            Container(margin:EdgeInsets.only(top: 30),child: Text("显示带有边缘锯齿的无需理会,是因为Flow绘制子Widget边缘计算的差异"),color: Colors.deepOrange,),
           ],),),
     bottomNavigationBar:BottomNavigationBar(
         items: bottomNavItems,
@@ -94,6 +99,7 @@ class _MyHomePageState extends State<MyHomePage> {
     }
     setState(() {
       currentIndex=index;
+       gifImg=gifImg=="fff"?"eee":"fff" ;
       index == 1 ? img = img == "bbb" ? "aaa" : "bbb": drawType =drawType == DrawType.center ? DrawType.fitXy : DrawType.center;
     });
   }

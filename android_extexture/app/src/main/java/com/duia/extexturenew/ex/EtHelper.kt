@@ -31,49 +31,60 @@ object EtHelper {
     private val handlerLongSparseArray: LongSparseArray<Handler?>? = LongSparseArray()
     private val movieNetMap = HashMap<String, Movie>()
     private val movieResourceMap = HashMap<Int, Movie>()
+    private const val mHttp = "http"
+    private const val mDrawable = "drawable"
+//    fun loadGif(
+//        context: Context,
+//        surfaceTextureEntry: TextureRegistry,
+//        imgResource: Int,
+//        width: Double?,
+//        height: Double?
+//    ): Long {
+//        return drawGifTexture(context, surfaceTextureEntry, imgResource, null, width, height)
+//    }
 
     fun loadGif(
         context: Context,
         surfaceTextureEntry: TextureRegistry,
-        imgResource: Int,
+        img: String,
         width: Double?,
         height: Double?
     ): Long {
-        return drawGifTexture(context, surfaceTextureEntry, imgResource, null, width, height)
-    }
-
-    fun loadGif(
-        context: Context,
-        surfaceTextureEntry: TextureRegistry,
-        imgUrl: String?,
-        width: Double?,
-        height: Double?
-    ): Long {
-        return drawGifTexture(context, surfaceTextureEntry, 0, imgUrl, width, height)
+        return if(img.startsWith(mHttp)){
+            drawGifTexture(context, surfaceTextureEntry, 0, img, width, height)
+        }else{
+            val resId = context.resources.getIdentifier(img, mDrawable, context.packageName)
+            drawGifTexture(context, surfaceTextureEntry, resId, null, width, height)
+        }
     }
 
     fun loadImg(
         context: Context,
         surfaceTextureEntry: TextureRegistry,
-        imgUrl: String?,
+        img: String,
         width: Double?,
         height: Double?,
         drawType:Int?
     ): Long {
-        return drawImgTexture(context, surfaceTextureEntry, 0, imgUrl, width, height,drawType)
+         return if(img.startsWith(mHttp)){
+            drawImgTexture(context, surfaceTextureEntry, 0, img, width, height,drawType)
+        }else{
+            val resId = context.resources.getIdentifier(img, mDrawable, context.packageName)
+            drawImgTexture(context, surfaceTextureEntry, resId, null, width, height,drawType)
+        }
+
     }
 
-    fun loadImg(
-        context: Context,
-        surfaceTextureEntry: TextureRegistry,
-        imgResource: Int,
-        width: Double?,
-        height: Double?,
-        drawType:Int?
-    ): Long {
-        return drawImgTexture(context, surfaceTextureEntry, imgResource, null, width, height,drawType)
-    }
-
+//    fun loadImg(
+//        context: Context,
+//        surfaceTextureEntry: TextureRegistry,
+//        imgResource: Int,
+//        width: Double?,
+//        height: Double?,
+//        drawType:Int?
+//    ): Long {
+//        return drawImgTexture(context, surfaceTextureEntry, imgResource, null, width, height,drawType)
+//    }
 
     private fun drawImgTexture(
         context: Context,
