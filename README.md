@@ -14,4 +14,8 @@
 # Flutter部分
 **模块为flutter_module 共提供居中显示，和拉伸显示两种显示模式，GIF图，网络图，本地资源显示方式** :sunglasses:
 
-#效果
+# 效果
+
+# 下载Apk体验 
+**二维码在 drawable 文件夹下 <br/> Apk在 release 文件夹下**<br/> :blush:
+![二维码](https://github.com/183839128/External_Texture/blob/master/android_extexture/app/src/main/res/drawable/ewm.png)
