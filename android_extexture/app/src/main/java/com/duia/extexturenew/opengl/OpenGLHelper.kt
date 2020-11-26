@@ -29,7 +29,7 @@ object OpenGLHelper {
         surfaceTextureEntry: TextureRegistry,
         width: Double?,
         height: Double?,
-        context: Context?
+        context: Context
     ): Long {
         var surfaceEntry = surfaceTextureEntry.createSurfaceTexture()
         val surfaceTexture = surfaceEntry.surfaceTexture().apply {
