@@ -17,7 +17,8 @@
 **模块为flutter_module 共提供居中显示，和拉伸显示两种显示模式，GIF图，网络图，本地资源显示方式** :sunglasses:
 
 # 效果
+**[点击查看视频效果](http://60.179.33.108:2811/e/file/download?code=439695af8bafa6fc&id=46515)**
 
 # 下载Apk体验 
 > 点击文字链接可跳转:blush:<br/>
-**[二维码](https://github.com/183839128/External_Texture/blob/master/android_extexture/app/src/main/res/drawable/ewm.png) 在 drawable 文件夹下 <br/> [APK](https://github.com/183839128/External_Texture/blob/master/android_extexture/app/release/app-release.apk) 在 release 文件夹下** <br/>
+**[二维码](https://github.com/183839128/External_Texture/blob/master/android_extexture/app/src/main/res/drawable/ewm.png) 在 drawable 文件夹下 <br/> [APK](https://github.com/183839128/External_Texture/blob/master/android_extexture/app/release/extexture.apk) 在 release 文件夹下** <br/>
